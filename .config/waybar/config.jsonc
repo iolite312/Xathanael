@@ -1,0 +1,96 @@
+// -*- mode: jsonc -*-
+{
+    "name": "Main",
+    "height": 48,
+    "spacing": 0,
+    "output": "DP-3",
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "disk",
+        "pulseaudio",
+        "clock",
+        "tray",
+        "keyboard-state"
+    ],
+    // Modules configuration
+    "hyprland/workspaces": {
+        "format": "{name}: {icon}",
+        "all-outputs": true,
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "active": "",
+            "default": ""
+        },
+        "persistent-workspaces": {
+            "DP-3": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ], // workspace 1 shown on DP-3
+            "HDMI-A-1": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ] // workspaces 2 and 3 shown on DP-1
+        }
+    },
+    "hyprland/window": {
+        "separate-outputs": true
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "tray": {
+        "icon-size": 48,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%H:%M %a %d-%m-%y}",
+        "tooltip": false
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headset": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pwvucontrol"
+    }
+}
