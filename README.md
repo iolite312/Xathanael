@@ -10,6 +10,7 @@ You have to have these packages atleast installed to make it work
 ```
 atuin
 alacritty
+git
 hyprland
 hyprpaper
 hyprpolkitagent (AUR)
@@ -19,6 +20,7 @@ nwg-clipman
 python
 rofi-wayland
 starship
+stow
 ttf-google-fonts-git (AUR)
 waybar
 wl-clipboard
