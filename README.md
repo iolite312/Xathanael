@@ -18,11 +18,11 @@ hyprshot (AUR)
 nemo
 nwg-clipman
 python
+quickshell (AUR)
 rofi-wayland
 starship
 stow
 ttf-google-fonts-git (AUR)
-waybar
 wl-clipboard
 wl-clip-persist
 ```

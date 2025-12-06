@@ -1,19 +1,48 @@
-import Quickshell // for PanelWindow
-import QtQuick // for Text
+pragma ComponentBehavior: Bound
+import Quickshell
+import Quickshell.Io
+import QtQuick
 
-PanelWindow {
-    anchors {
-        top: true
-        left: true
-        right: true
+Scope {
+    id: root
+    property string time
+
+    Variants {
+        model: Quickshell.screens
+
+        PanelWindow {
+            required property var modelData
+            screen: modelData
+
+            anchors {
+                top: true
+                left: true
+                right: true
+            }
+
+            implicitHeight: 30
+
+            Text {
+                anchors.centerIn: parent
+                text: root.time
+            }
+        }
     }
 
-    implicitHeight: 30
+    Process {
+        id: dateProc
+        command: ["date"]
+        running: true
 
-    Text {
-        // center the bar in its parent component (the window)
-        anchors.centerIn: parent
+        stdout: StdioCollector {
+            onStreamFinished: root.time = this.text
+        }
+    }
 
-        text: "hello world"
+    Timer {
+        interval: 1000
+        running: true
+        repeat: true
+        onTriggered: dateProc.running = true
     }
 }
