@@ -13,6 +13,8 @@ alacritty
 git
 hyprland
 hyprpaper
+hypridle
+hyprlock
 hyprpolkitagent (AUR)
 hyprshot (AUR)
 nemo
