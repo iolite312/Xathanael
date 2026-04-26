@@ -34,29 +34,32 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     packages = with pkgs; [
-      tree
+      #
     ];
   };
-
-  programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
     nano
     wget
-    alacritty
-    nemo
-    nemo-fileroller
     inputs.waterfox.packages.${pkgs.system}.waterfox-bin
     seahorse
+    xdg-desktop-portal-gtk
   ];
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+    ];
+    config.common.default = "*";
+  };
 
   programs._1password-gui.enable = true;
   programs._1password.enable = true;
 
-  environment.pathsToLink = [
-    "/share/applications"
-    "/share/xdg-desktop-portal"
-  ];
+  programs.dconf = {
+    enable = true;
+  };
 
   environment.etc = {
     "1password/custom_allowed_browsers" = {
@@ -77,12 +80,28 @@
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
+
+  services.pulseaudio.enable = false;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
+
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 14d";
+  };
+
   system.stateVersion = "25.11";
 
 }

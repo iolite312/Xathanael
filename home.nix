@@ -10,13 +10,6 @@
 
   home.stateVersion = "25.11";
 
-  programs.bash = {
-    enable = true;
-    shellAliases = {
-      btw = "echo i use nixos, btw";
-    };
-  };
-
   programs.git = {
     enable = true;
     signing = {
@@ -44,22 +37,20 @@
   };
 
   xdg.configFile."qtile" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/iolite/nixos-dotfiles/config/qtile";
+    source = config.lib.file.mkOutOfStoreSymlink "/home/iolite/Xathanael/config/qtile";
     recursive = true;
-  };
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-    ];
-    config.common.default = "*";
   };
 
   home.packages = with pkgs; [
     rofi
     nil
     nixfmt
+    libsForQt5.qt5ct
+    qt6Packages.qt6ct
+    alacritty
+    nemo
+    nemo-fileroller
+    pwvucontrol
   ];
 
   programs.vscode = {
@@ -68,5 +59,53 @@
       jnoortheen.nix-ide
       wakatime.vscode-wakatime
     ];
+  };
+
+  # Force the dark color scheme and explicitly set GTK3 theme in dconf
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
+  gtk = {
+    enable = true;
+
+    gtk4.theme = null;
+
+    iconTheme = {
+      name = "Mint-Y-Yaru";
+      package = pkgs.mint-y-icons;
+    };
+
+    cursorTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+      size = 24;
+    };
+
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+
+    font = {
+      name = "Adwaita Sans Regular";
+      package = pkgs.adwaita-fonts;
+      size = 11;
+    };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "qt6ct";
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+    ];
+    config.common.default = "*";
   };
 }
