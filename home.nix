@@ -48,6 +48,14 @@
     recursive = true;
   };
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+    ];
+    config.common.default = "*";
+  };
+
   home.packages = with pkgs; [
     rofi
     nil

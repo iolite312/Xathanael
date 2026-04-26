@@ -47,10 +47,16 @@
     nemo
     nemo-fileroller
     inputs.waterfox.packages.${pkgs.system}.waterfox-bin
+    seahorse
   ];
 
   programs._1password-gui.enable = true;
   programs._1password.enable = true;
+
+  environment.pathsToLink = [
+    "/share/applications"
+    "/share/xdg-desktop-portal"
+  ];
 
   environment.etc = {
     "1password/custom_allowed_browsers" = {
@@ -60,6 +66,12 @@
       '';
       mode = "0755";
     };
+  };
+
+  services.gnome.gnome-keyring.enable = true;
+
+  environment.sessionVariables = {
+    SSH_AUTH_SOCK = "/run/user/1000/gcr/ssh";
   };
 
   fonts.packages = with pkgs; [
