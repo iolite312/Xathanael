@@ -13,6 +13,7 @@ Scope {
         PanelWindow {
             required property var modelData
             screen: modelData
+            color: '#2b2b2b'
 
             anchors {
                 top: true
@@ -25,6 +26,7 @@ Scope {
             Text {
                 anchors.centerIn: parent
                 text: root.time
+                color: '#fff'
             }
         }
     }
