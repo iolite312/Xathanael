@@ -121,3 +121,7 @@ export PATH=$PATH:/home/linux-maniac/.spicetify
 
 # Created by `pipx` on 2025-04-24 14:12:47
 export PATH="$PATH:/home/linux-maniac/.local/bin"
+
+# Laravel sail
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+alias artisan='sail artisan'
