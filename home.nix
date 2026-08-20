@@ -3,25 +3,25 @@
   pkgs,
   ...
 }:
-let
-  # 1. Define the path to your programs directory
-  programsDir = ./config/programs;
+# let
+#   # 1. Define the path to your programs directory
+#   programsDir = ./config/programs;
 
-  # 2. Get the content of the directory
-  files = builtins.readDir programsDir;
+#   # 2. Get the content of the directory
+#   files = builtins.readDir programsDir;
 
-  # 3. Filter for directories only (ignoring regular files like .DS_Store or READMEs)
-  directories = builtins.filter (name: files.${name} == "directory") (builtins.attrNames files);
+#   # 3. Filter for directories only (ignoring regular files like .DS_Store or READMEs)
+#   directories = builtins.filter (name: files.${name} == "directory") (builtins.attrNames files);
 
-  # 4. Map the directory names to import paths
-  programImports = map (name: programsDir + "/${name}") directories;
-in
+#   # 4. Map the directory names to import paths
+#   programImports = map (name: programsDir + "/${name}") directories;
+# in
 {
   imports = [
     # sessions
     ./config/programs/hyprland/default.nix
-  ]
-  ++ programImports;
+  ];
+  # ++ programImports;
 
   home.username = "iolite";
   home.homeDirectory = "/home/iolite";

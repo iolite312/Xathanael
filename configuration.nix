@@ -83,6 +83,12 @@
     };
   };
 
+  services.gnome.gnome-keyring.enable = true;
+
+  environment.sessionVariables = {
+    SSH_AUTH_SOCK = "/run/user/1000/gcr/ssh";
+  };
+
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
