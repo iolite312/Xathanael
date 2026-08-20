@@ -174,7 +174,7 @@ local ctrlMod = "CTRL"
 local altMod  = "ALT"
 
 hl.bind(ctrlMod .. " + " .. altMod .. " + T", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("/usr/bin/python3 /home/linux-maniac/.config/hypr/scripts/soundswitcher.py"))
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("/usr/bin/python3 /home/iolite/.config/hypr/scripts/soundswitcher.py"))
 hl.bind(mainMod .. " + W", hl.dsp.window.close())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.window.float({ action = "toggle" }))

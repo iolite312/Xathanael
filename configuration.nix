@@ -22,17 +22,30 @@
 
   time.timeZone = "Europe/Amsterdam";
 
-  services.displayManager.ly.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+  programs.hyprland.enable = true;
+
+  services.xrdp.enable = true;
+  # services.xrdp.defaultWindowManager = "startplasma-x11";
+  services.xrdp.openFirewall = true;
   services.xserver = {
     enable = true;
-    autoRepeatDelay = 200;
-    autoRepeatInterval = 35;
-    windowManager.qtile.enable = true;
+    xkb = {
+      layout = "us";
+    };
   };
+
+  systemd.targets.sleep.enable = false;
+  systemd.targets.suspend.enable = false;
+  systemd.targets.hibernate.enable = false;
+  systemd.targets.hybrid-sleep.enable = false;
 
   users.users.iolite = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [
+      "wheel"
+    ];
     packages = with pkgs; [
       #
     ];
@@ -43,7 +56,6 @@
     wget
     inputs.waterfox.packages.${pkgs.system}.waterfox-bin
     seahorse
-    xdg-desktop-portal-gtk
   ];
 
   xdg.portal = {
@@ -69,12 +81,6 @@
       '';
       mode = "0755";
     };
-  };
-
-  services.gnome.gnome-keyring.enable = true;
-
-  environment.sessionVariables = {
-    SSH_AUTH_SOCK = "/run/user/1000/gcr/ssh";
   };
 
   fonts.packages = with pkgs; [
