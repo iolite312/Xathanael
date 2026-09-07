@@ -1,26 +1,27 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ }:
 {
   programs.zsh = {
     enable = true;
 
-    histFile = "/home/iolite/.config/zsh";
-    histSize = 10000;
+    enableCompletion = true;
 
-    ohMyZsh = {
+    history = {
+      path = "/home/iolite/.config/zsh";
+      size = 10000;
+      save = 10000;
+    };
+
+    oh-my-zsh = {
       enable = true;
       plugins = [
         "git"
         "colorize"
         "colored-man-pages"
-        "zsh-autosuggestions"
       ];
       theme = "robbyrussell";
     };
+
+    autosuggestion.enable = true;
 
     shellAliases = {
       sail = "sh $([ -f sail ] && echo sail || echo vendor/bin/sail)";

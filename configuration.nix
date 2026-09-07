@@ -27,7 +27,7 @@
   programs.hyprland.enable = true;
 
   services.xrdp.enable = true;
-  # services.xrdp.defaultWindowManager = "startplasma-x11";
+  services.xrdp.defaultWindowManager = "startplasma-x11";
   services.xrdp.openFirewall = true;
   services.xserver = {
     enable = true;
@@ -35,6 +35,8 @@
       layout = "us";
     };
   };
+  services.displayManager.autoLogin.enable = false;
+  services.getty.autologinUser = null;
 
   systemd.targets.sleep.enable = false;
   systemd.targets.suspend.enable = false;
@@ -57,6 +59,7 @@
     wget
     inputs.waterfox.packages.${pkgs.system}.waterfox-bin
     seahorse
+    quickshell
   ];
 
   xdg.portal = {
@@ -69,6 +72,7 @@
 
   programs._1password-gui.enable = true;
   programs._1password.enable = true;
+  programs.zsh.enable = true;
 
   programs.dconf = {
     enable = true;
@@ -92,6 +96,7 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    nerd-fonts.fira-code
   ];
 
   services.pulseaudio.enable = false;
@@ -115,6 +120,6 @@
     options = "--delete-older-than 14d";
   };
 
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 
 }
