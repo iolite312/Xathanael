@@ -9,6 +9,7 @@ in
 {
   imports = [
     "${programsDir}/hyprland/default.nix"
+    "${programsDir}/rofi/default.nix"
     "${programsDir}/shell/default.nix"
   ];
 
@@ -44,7 +45,6 @@ in
   };
 
   home.packages = with pkgs; [
-    rofi
     nil
     nixfmt
     libsForQt5.qt5ct
