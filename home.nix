@@ -11,6 +11,7 @@ in
     "${programsDir}/hyprland/default.nix"
     "${programsDir}/rofi/default.nix"
     "${programsDir}/shell/default.nix"
+    "${programsDir}/spicetify/default.nix"
   ];
 
   home.username = "iolite";
@@ -53,6 +54,12 @@ in
     nemo-fileroller
     pwvucontrol
     fastfetch
+    filezilla
+    obs-studio
+    proton-vpn
+    protonplus
+    heroic
+    vesktop
   ];
 
   programs.vscode = {

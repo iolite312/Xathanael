@@ -8,6 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     waterfox.url = "github:Hythera/nix-waterfox";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
   outputs =

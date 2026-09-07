@@ -73,6 +73,9 @@
   programs._1password-gui.enable = true;
   programs._1password.enable = true;
   programs.zsh.enable = true;
+  programs.steam = {
+    enable = true;
+  };
 
   programs.dconf = {
     enable = true;
