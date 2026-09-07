@@ -17,7 +17,7 @@ in
     ];
     theme = spicePkgs.themes.sleek;
     colorScheme = "UltraBlack";
-    enabledCustomApps = with spicePkgs.customApps; [
+    enabledCustomApps = with spicePkgs.apps; [
       lyricsPlus
     ];
   };
