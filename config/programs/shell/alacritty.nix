@@ -1,18 +1,21 @@
-{ }:
+{
+  pkgs,
+  ...
+}:
 {
   programs.alacritty = {
     enable = true;
     settings = {
       font = {
         normal = {
-          family = "Fira Code Nerd Font Mono";
+          family = "FiraCode Nerd Font Mono";
           style = "Regular";
         };
         size = 14;
       };
 
       terminal = {
-        shell = "/bin/zsh";
+        shell = "${pkgs.zsh}/bin/zsh";
       };
     };
   };
