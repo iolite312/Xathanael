@@ -3,30 +3,19 @@
   pkgs,
   ...
 }:
-# let
-#   # 1. Define the path to your programs directory
-#   programsDir = ./config/programs;
-
-#   # 2. Get the content of the directory
-#   files = builtins.readDir programsDir;
-
-#   # 3. Filter for directories only (ignoring regular files like .DS_Store or READMEs)
-#   directories = builtins.filter (name: files.${name} == "directory") (builtins.attrNames files);
-
-#   # 4. Map the directory names to import paths
-#   programImports = map (name: programsDir + "/${name}") directories;
-# in
+let
+  programsDir = ./config/programs;
+in
 {
   imports = [
-    # sessions
-    ./config/programs/hyprland/default.nix
+    "${programsDir}/hyprland/default.nix"
+    "${programsDir}/shell/default.nix"
   ];
-  # ++ programImports;
 
   home.username = "iolite";
   home.homeDirectory = "/home/iolite";
 
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
 
   programs.git = {
     enable = true;
@@ -124,12 +113,12 @@
   };
 
   xdg.configFile."hypr" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/iolite/Xathanael/config/hyprland";
+    source = config.lib.file.mkOutOfStoreSymlink "/home/iolite/Xathanael/config/programs/hyprland";
     recursive = true;
   };
 
   xdg.configFile."quickshell" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/iolite/Xathanael/config/quickshell";
+    source = config.lib.file.mkOutOfStoreSymlink "/home/iolite/Xathanael/config/programs/quickshell";
     recursive = true;
   };
 }

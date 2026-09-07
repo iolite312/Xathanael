@@ -49,6 +49,7 @@
     packages = with pkgs; [
       #
     ];
+    shell = pkgs.zsh;
   };
 
   environment.systemPackages = with pkgs; [
