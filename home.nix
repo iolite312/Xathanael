@@ -12,6 +12,7 @@ in
     "${programsDir}/rofi/default.nix"
     "${programsDir}/shell/default.nix"
     "${programsDir}/spicetify/default.nix"
+    "${programsDir}/dms/default.nix"
   ];
 
   home.username = "iolite";
@@ -60,6 +61,17 @@ in
     protonplus
     heroic
     vesktop
+    prismlauncher
+    obsidian
+    remmina
+    goverlay
+    mangohud
+    kdePackages.kdeconnect-kde
+    libreoffice
+    oversteer
+    solaar
+    vlc
+    qbittorrent
   ];
 
   programs.vscode = {
@@ -114,8 +126,9 @@ in
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
     ];
-    config.common.default = "*";
+    config.common.default = "hyprland";
   };
 
   xdg.configFile."hypr" = {
@@ -123,8 +136,8 @@ in
     recursive = true;
   };
 
-  xdg.configFile."quickshell" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/iolite/Xathanael/config/programs/quickshell";
-    recursive = true;
-  };
+  # xdg.configFile."quickshell" = {
+  #   source = config.lib.file.mkOutOfStoreSymlink "/home/iolite/Xathanael/config/programs/quickshell";
+  #   recursive = true;
+  # };
 }

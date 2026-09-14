@@ -1,28 +1,36 @@
+-- require("env")
 ------------------
 ---- MONITORS ----
 ------------------
 
--- Main
+-- -- Main
+-- hl.monitor({
+--     output = "DP-1",
+--     mode = "2560x1440@239.99",
+--     position = "0x0",
+--     scale = 1.0,
+-- })
+
+-- -- Right
+-- hl.monitor({
+--     output = "DP-3",
+--     mode = "2560x1440@239.99",
+--     position = "2560x0",
+--     scale = 1.0,
+-- })
+
+-- -- Left
+-- hl.monitor({
+--     output = "DP-2",
+--     mode = "2560x1440@164.96",
+--     position = "-2560x0",
+--     scale = 1.0,
+-- })
+
 hl.monitor({
-    output = "DP-1",
-    mode = "2560x1440@239.99",
+    output = "Virtual-1",
+    mode = "1920x1080@60.00",
     position = "0x0",
-    scale = 1.0,
-})
-
--- Right
-hl.monitor({
-    output = "DP-3",
-    mode = "2560x1440@239.99",
-    position = "2560x0",
-    scale = 1.0,
-})
-
--- Left
-hl.monitor({
-    output = "DP-2",
-    mode = "2560x1440@164.96",
-    position = "-2560x0",
     scale = 1.0,
 })
 
@@ -39,11 +47,11 @@ local menu = "rofi -show combi -show-icons -icon-theme adwaita"
 -------------------
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("systemctl --user start hyprpolkitagent")
+    hl.exec_cmd("dms run")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
     hl.exec_cmd(
-        "qs -d & flatpak run dev.vencord.Vesktop & hyprpaper & hypridle & 1password --silent & steam -silent & headsetcontrol -l 0")
+        "flatpak run dev.vencord.Vesktop & hyprpaper & hypridle & 1password --silent & headsetcontrol -l 0")
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 end)
 

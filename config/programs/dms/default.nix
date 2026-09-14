@@ -1,15 +1,21 @@
 {
-  programs.dms-shell = {
-    enable = true;
+  inputs,
+  pkgs,
+  ...
+}:
+{
+  imports = [
+    inputs.dms.homeModules.dank-material-shell
+  ];
 
-    systemd = {
-      enable = true;
-      restartIfChanged = true;
-    };
+  programs.dank-material-shell = {
+    enable = true;
+    systemd.enable = false;
 
     enableSystemMonitoring = true;
-    enableVPN = true;
+    enableVPN = false;
     enableDynamicTheming = true;
-    enableCalenderEvents = true;
+    enableAudioWavelength = true;
+    enableCalendarEvents = true;
   };
 }

@@ -9,6 +9,13 @@
     };
     waterfox.url = "github:Hythera/nix-waterfox";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs =

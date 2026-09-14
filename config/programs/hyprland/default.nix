@@ -2,18 +2,11 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }:
 
 {
-  # imports = [
-  #   ./hypridle.nix
-  # ];
-
-  # wayland.windowManager.hyprland = {
-  #   enable = true;
-  # };
-
   home.packages = with pkgs; [
     rofi
     pavucontrol
