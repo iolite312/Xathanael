@@ -9,7 +9,6 @@ in
 {
   imports = [
     "${programsDir}/hyprland/default.nix"
-    "${programsDir}/rofi/default.nix"
     "${programsDir}/shell/default.nix"
     "${programsDir}/spicetify/default.nix"
     "${programsDir}/dms/default.nix"
