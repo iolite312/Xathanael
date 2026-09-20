@@ -3,7 +3,6 @@
   pkgs,
   lib,
   inputs,
-  home,
   ...
 }:
 
@@ -45,11 +44,4 @@
   ];
 
   home.sessionVariables.NIXOS_OZONE_WL = "1";
-  wayland.windowManager.hyprland.settings = {
-    exec-once = [
-      # Fixes cursor themes in gnome apps under hyprland
-      "gsettings set org.gnome.desktop.interface cursor-theme '${config.home.pointerCursor.name}'"
-      "gsettings set org.gnome.desktop.interface cursor-size ${toString home.pointerCursor.size}"
-    ];
-  };
 }

@@ -89,6 +89,14 @@ in
     };
   };
 
+  home.pointerCursor = {
+    enable = true;
+    gtk.enable = true;
+    package = pkgs.adwaita-icon-theme;
+    name = "Adwaita";
+    size = 24;
+  };
+
   gtk = {
     enable = true;
 
@@ -97,12 +105,6 @@ in
     iconTheme = {
       name = "Mint-Y-Yaru";
       package = pkgs.mint-y-icons;
-    };
-
-    cursorTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
-      size = 24;
     };
 
     theme = {
