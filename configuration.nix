@@ -27,6 +27,13 @@
     enable = true;
   };
 
+  systemd.user.targets.hyprland-session = {
+    description = "Hyprland session";
+    bindsTo = [ "graphical-session.target" ];
+    wants = [ "graphical-session-pre.target" ];
+    after = [ "graphical-session-pre.target" ];
+  };
+
   services.xserver = {
     enable = true;
     xkb = {
@@ -55,14 +62,16 @@
     qt6.qtwayland
   ];
 
-  # xdg.portal = {
-  #   enable = true;
-  #   extraPortals = with pkgs; [
-  #     xdg-desktop-portal-gtk
-  #     xdg-desktop-portal-hyprland
-  #   ];
-  #   config.common.default = "*";
-  # };
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+    ];
+    config.hyprland.preferred = [
+      "hyprland"
+      "gtk"
+    ];
+  };
 
   programs._1password-gui.enable = true;
   programs._1password.enable = true;
@@ -112,18 +121,6 @@
     "nix-command"
     "flakes"
   ];
-
-  # nix.settings = {
-  #   substituters = [ "https://hyprland.cachix.org" ];
-  #   trusted-substituters = [ "https://hyprland.cachix.org" ];
-  #   trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
-  #   # Required so non-root users are allowed to use the above substituter/keys.
-  #   # Use @wheel for all sudo users, or list your username explicitly.
-  #   trusted-users = [
-  #     "root"
-  #     "@wheel"
-  #   ];
-  # };
 
   nix.gc = {
     automatic = true;

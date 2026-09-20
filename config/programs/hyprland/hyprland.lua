@@ -50,9 +50,9 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("dms run")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
-    hl.exec_cmd(
-        "flatpak run dev.vencord.Vesktop & hyprpaper & hypridle & 1password --silent & headsetcontrol -l 0")
-    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+    -- hl.exec_cmd("1password --silent & vesktop &")
+    hl.exec_cmd("systemctl --user start hyprland-session.target")
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE HYPRLAND_INSTANCE_SIGNATURE")
 end)
 
 -------------------------------

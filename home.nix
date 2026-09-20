@@ -122,22 +122,8 @@ in
     platformTheme.name = "qt6ct";
   };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-hyprland
-    ];
-    config.common.default = "hyprland";
-  };
-
   xdg.configFile."hypr" = {
     source = config.lib.file.mkOutOfStoreSymlink "/home/iolite/Xathanael/config/programs/hyprland";
     recursive = true;
   };
-
-  # xdg.configFile."quickshell" = {
-  #   source = config.lib.file.mkOutOfStoreSymlink "/home/iolite/Xathanael/config/programs/quickshell";
-  #   recursive = true;
-  # };
 }
