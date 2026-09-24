@@ -1,6 +1,4 @@
 {
-  config,
-  lib,
   pkgs,
   inputs,
   ...
@@ -80,11 +78,12 @@
   environment.systemPackages = with pkgs; [
     nano
     wget
-    inputs.waterfox.packages.${pkgs.system}.waterfox-bin
+    inputs.waterfox.packages.${stdenv.hostPlatform.system}.waterfox-bin
     seahorse
     # quickshell
     btop-rocm
     qt6.qtwayland
+    adwaita-icon-theme
   ];
 
   xdg.portal = {
@@ -124,6 +123,8 @@
 
   environment.sessionVariables = {
     SSH_AUTH_SOCK = "/run/user/1000/gcr/ssh";
+    XCURSOR_THEME = "Adwaita";
+    XCURSOR_SIZE = "24";
   };
 
   fonts.packages = with pkgs; [
