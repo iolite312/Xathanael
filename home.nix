@@ -38,7 +38,10 @@ in
 
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "yes";
+    enableDefaultConfig = false;
+    settings."*" = {
+      AddKeysToAgent = "yes";
+    };
     extraConfig = ''
       Host *
         IdentityFile ~/.ssh/id_ed25519
@@ -85,6 +88,9 @@ in
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
+    };
+    "org/cinnamon/desktop/applications/terminal" = {
+      exec = "alacritty";
     };
   };
 
