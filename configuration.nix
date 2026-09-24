@@ -29,7 +29,16 @@
 
   programs.dms-greeter = {
     enable = true;
-    compositor.name = "hyprland";
+    compositor = {
+      name = "hyprland";
+      customConfig = ''
+        hl.config({
+          input = {
+              numlock_by_default = true,
+          },
+        })
+      '';
+    };
 
     configHome = "/home/iolite";
 
