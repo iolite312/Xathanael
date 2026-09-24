@@ -2,6 +2,8 @@
   "currentThemeName": "dynamic",
   "currentThemeCategory": "dynamic",
   "cornerRadius": 12,
+  "hyprlandLayoutGapsOverride": 5,
+  "hyprlandLayoutGapsOutOverride": 10,
   "firstDayOfWeek": 1,
   "controlCenterShowMicPercent": true,
   "showWorkspaceIndex": true,
