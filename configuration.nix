@@ -9,6 +9,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    inputs.dank-greeter.nixosModules.default
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -22,9 +23,24 @@
 
   time.timeZone = "Europe/Amsterdam";
 
-  services.displayManager.sddm.enable = true;
   programs.hyprland = {
     enable = true;
+  };
+
+  programs.dms-greeter = {
+    enable = true;
+    compositor.name = "hyprland";
+
+    configHome = "/home/iolite";
+
+    configFiles = [
+      "/home/iolite/.config/DankMaterialShell/settings.json"
+    ];
+
+    logs = {
+      save = true;
+      path = "/tmp/dms-greeter.log";
+    };
   };
 
   systemd.user.targets.hyprland-session = {
