@@ -7,7 +7,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    waterfox.url = "github:Hythera/nix-waterfox";
+    waterfox.url = "github:iolite312/nix-waterfox";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     dms = {

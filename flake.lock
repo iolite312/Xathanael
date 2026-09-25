@@ -225,15 +225,15 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1785937664,
-        "narHash": "sha256-zfrYkBidIS6KSItHT6DTJPens3VrfUVyGtD3iSYFtZI=",
-        "owner": "Hythera",
+        "lastModified": 1790334767,
+        "narHash": "sha256-69bdwgJZ0tjy2pCqR5piXLuSmma9WNKsIPJS3H72pdA=",
+        "owner": "iolite312",
         "repo": "nix-waterfox",
-        "rev": "fbdd3fe496d59d29247714ded4c4995cc541f8b1",
+        "rev": "93deced77d2734f553eb7126e39797dff3a4f88e",
         "type": "github"
       },
       "original": {
-        "owner": "Hythera",
+        "owner": "iolite312",
         "repo": "nix-waterfox",
         "type": "github"
       }
