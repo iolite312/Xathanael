@@ -188,7 +188,8 @@
   ],
   "builtInPluginSettings": {
     "dms_settings_search": {
-      "trigger": "?"
+      "trigger": "?",
+      "enabled": false
     },
     "dms_clipboard_search": {
       "trigger": "cb"
@@ -198,6 +199,9 @@
     },
     "dms_qr_generator": {
       "trigger": "qrg"
+    },
+    "dms_colorpicker": {
+      "enabled": false
     }
   },
   "configVersion": 18
