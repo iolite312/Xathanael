@@ -73,6 +73,7 @@
       #
     ];
     shell = pkgs.zsh;
+    initialPassword = "1234";
   };
 
   environment.systemPackages = with pkgs; [
@@ -81,7 +82,7 @@
     inputs.waterfox.packages.${stdenv.hostPlatform.system}.waterfox-bin
     seahorse
     # quickshell
-    btop-rocm
+    btop
     qt6.qtwayland
     adwaita-icon-theme
   ];
@@ -151,7 +152,7 @@
   nix.gc = {
     automatic = true;
     dates = "daily";
-    options = "--delete-older-than 14d";
+    options = "--delete-older-than 7d";
   };
 
   system.stateVersion = "26.05";
