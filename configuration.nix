@@ -68,6 +68,7 @@
     isNormalUser = true;
     extraGroups = [
       "wheel"
+      "docker"
     ];
     packages = with pkgs; [
       #
@@ -81,7 +82,6 @@
     wget
     inputs.waterfox.packages.${stdenv.hostPlatform.system}.waterfox-bin
     seahorse
-    # quickshell
     btop
     qt6.qtwayland
     adwaita-icon-theme

@@ -8,33 +8,17 @@ let
 in
 {
   imports = [
+    "${programsDir}/coding/default.nix"
+    "${programsDir}/dms/default.nix"
     "${programsDir}/hyprland/default.nix"
     "${programsDir}/shell/default.nix"
     "${programsDir}/spicetify/default.nix"
-    "${programsDir}/dms/default.nix"
   ];
 
   home.username = "iolite";
   home.homeDirectory = "/home/iolite";
 
   home.stateVersion = "26.05";
-
-  programs.git = {
-    enable = true;
-    signing = {
-      key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDlv/ROyCaJnOxW+tiQ9wntBN3PIXLEExeh/RJzxed3a";
-      signByDefault = true;
-    };
-    settings = {
-      gpg = {
-        format = "ssh";
-      };
-      user = {
-        name = "iolite312";
-        email = "68647023+iolite312@users.noreply.github.com";
-      };
-    };
-  };
 
   programs.ssh = {
     enable = true;
@@ -49,8 +33,6 @@ in
   };
 
   home.packages = with pkgs; [
-    nil
-    nixfmt
     libsForQt5.qt5ct
     qt6Packages.qt6ct
     nemo-with-extensions
@@ -74,14 +56,6 @@ in
     vlc
     qbittorrent
   ];
-
-  programs.vscode = {
-    enable = true;
-    profiles.default.extensions = with pkgs.vscode-extensions; [
-      jnoortheen.nix-ide
-      wakatime.vscode-wakatime
-    ];
-  };
 
   # Force the dark color scheme and explicitly set GTK3 theme in dconf
   dconf.settings = {
