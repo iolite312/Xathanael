@@ -8,6 +8,21 @@
     profiles.default.extensions = with pkgs.vscode-extensions; [
       jnoortheen.nix-ide
       wakatime.vscode-wakatime
+      aaron-bond.better-comments
+      pkief.material-icon-theme
+      pkief.material-product-icons
+      zhuangtongfa.material-theme
+      esbenp.prettier-vscode
+      stylelint.vscode-stylelint
+      naumovs.color-highlight
+      bierner.color-info
+      pranaygp.vscode-css-peek
+      editorconfig.editorconfig
+      usernamehw.errorlens
+      dbaeumer.vscode-eslint
+      oderwat.indent-rainbow
+      mhutchie.git-graph
+      eamodio.gitlens
     ];
   };
 
