@@ -105,6 +105,14 @@
     enable = true;
   };
 
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+
   programs.dconf = {
     enable = true;
   };
