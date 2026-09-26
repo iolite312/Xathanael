@@ -9,10 +9,7 @@
     kubectl
     lua5
     nodejs_24
-    openjdk8
-    openjdk17
     openjdk21
-    openjdk25
     php85
     php85Packages.composer
     pipx
