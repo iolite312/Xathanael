@@ -9,11 +9,11 @@ let
 in
 {
   imports = [
-    "${programsDir}/coding/default.nix"
-    "${programsDir}/dms/default.nix"
-    "${programsDir}/hyprland/default.nix"
-    "${programsDir}/shell/default.nix"
-    "${programsDir}/spicetify/default.nix"
+    (programsDir + "/coding/default.nix")
+    (programsDir + "/dms/default.nix")
+    (programsDir + "/hyprland/default.nix")
+    (programsDir + "/shell/default.nix")
+    (programsDir + "/spicetify/default.nix")
   ];
 
   home.username = "iolite";
@@ -104,7 +104,7 @@ in
   };
 
   xdg.configFile."hypr" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/iolite/Xathanael/config/programs/hyprland";
+    source = impurity.link ./config/programs/hyprland;
     recursive = true;
   };
 }

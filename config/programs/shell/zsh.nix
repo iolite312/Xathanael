@@ -25,6 +25,7 @@
     shellAliases = {
       sail = "sh $([ -f sail ] && echo sail || echo vendor/bin/sail)";
       artisan = "sail artisan";
+      nrsi = "IMPURITY_PATH=$(pwd) sudo --preserve-env=IMPURITY_PATH nixos-rebuild switch --flake .#maniac-impure --impure";
     };
   };
 }

@@ -1,5 +1,6 @@
 {
   config,
+  impurity,
   ...
 }:
 {
@@ -9,6 +10,6 @@
   };
 
   xdg.configFile."starship.toml" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/iolite/Xathanael/config/programs/shell/starship.toml";
+    source = impurity.link ./starship.toml;
   };
 }

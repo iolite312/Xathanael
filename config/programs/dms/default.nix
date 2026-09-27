@@ -1,6 +1,7 @@
 {
   inputs,
   config,
+  impurity,
   ...
 }:
 {
@@ -27,6 +28,6 @@
   };
 
   xdg.configFile."DankMaterialShell/settings.json" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/iolite/Xathanael/config/programs/dms/settings.json";
+    source = impurity.link ./settings.json;
   };
 }
