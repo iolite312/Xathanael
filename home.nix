@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  impurity,
   ...
 }:
 let
@@ -103,7 +104,6 @@ in
   };
 
   xdg.configFile."hypr" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/iolite/Xathanael/config/programs/hyprland";
-    recursive = true;
+    source = impurity.link "./config/programs/hyprland";
   };
 }
