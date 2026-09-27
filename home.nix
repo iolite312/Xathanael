@@ -104,6 +104,7 @@ in
   };
 
   xdg.configFile."hypr" = {
-    source = impurity.link "./config/programs/hyprland";
+    source = config.lib.file.mkOutOfStoreSymlink "/home/iolite/Xathanael/config/programs/hyprland";
+    recursive = true;
   };
 }

@@ -27,10 +27,6 @@
       url = "github:AvengeMedia/dank-greeter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    impurity = {
-      url = "github:outfoxxed/impurity.nix";
-    };
   };
 
   outputs =
@@ -38,7 +34,6 @@
       self,
       nixpkgs,
       home-manager,
-      impurity,
       ...
     }@inputs:
     let
@@ -51,10 +46,6 @@
           system = "x86_64-linux";
           modules = [
             ./configuration.nix
-            {
-              imports = [ impurity.nixosModules.impurity ];
-              impurity.configRoot = self;
-            }
             home-manager.nixosModules.home-manager
             {
               home-manager = {
@@ -66,10 +57,6 @@
               };
             }
           ];
-        };
-
-        maniac-impure = self.nixosConfigurations.maniac.extendModules {
-          modules = [ { impurity.enable = true; } ];
         };
       };
     };
