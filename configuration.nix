@@ -80,8 +80,8 @@
       #
     ];
     shell = pkgs.zsh;
-    initialPassword = "1234";
   };
+  users.mutableUsers = true;
 
   environment.systemPackages = with pkgs; [
     nano
