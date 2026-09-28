@@ -85,6 +85,7 @@
     btop
     qt6.qtwayland
     adwaita-icon-theme
+    cifs-utils
   ];
 
   xdg.portal = {
@@ -129,6 +130,7 @@
 
   services.gnome.gnome-keyring.enable = true;
   services.gvfs.enable = true;
+  services.udisks2.enable = true;
 
   environment.sessionVariables = {
     SSH_AUTH_SOCK = "/run/user/1000/gcr/ssh";
@@ -148,6 +150,23 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     wireplumber.enable = true;
+  };
+
+  fileSystems."/mnt/nas" = {
+    device = "//192.168.1.160/nas";
+    fsType = "cifs";
+    options =
+      let
+        # this line prevents hanging on network split
+        automount_opts = "x-systemd.automount,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+
+      in
+      [
+        "${automount_opts},credentials=/home/iolite/smb-secrets"
+        "nofail"
+        "x-gvfs-show"
+        "uid=1000,gid=100"
+      ];
   };
 
   nixpkgs.config.allowUnfree = true;
