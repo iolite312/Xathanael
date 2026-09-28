@@ -1,4 +1,6 @@
 {
+  "currentThemeName": "dynamic",
+  "currentThemeCategory": "dynamic",
   "cornerRadius": 12,
   "hyprlandLayoutGapsOverride": 5,
   "hyprlandLayoutGapsOutOverride": 10,
