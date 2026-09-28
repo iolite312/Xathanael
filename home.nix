@@ -56,6 +56,7 @@ in
     solaar
     vlc
     qbittorrent
+    xviewer
   ];
 
   # Force the dark color scheme and explicitly set GTK3 theme in dconf
@@ -106,5 +107,10 @@ in
   xdg.configFile."hypr" = {
     source = impurity.link ./config/programs/hyprland;
     recursive = true;
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications."application/pdf" = [ "waterfox.desktop" ];
   };
 }
