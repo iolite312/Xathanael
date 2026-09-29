@@ -4,17 +4,17 @@
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("dms run")
-    hl.exec_cmd("1password --silent")
-    hl.exec_cmd("vesktop")
     hl.exec_cmd("systemctl --user start hyprland-session.target")
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE HYPRLAND_INSTANCE_SIGNATURE")
+    hl.exec_cmd("1password --silent")
+    hl.exec_cmd("vesktop")
 end)
 
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
 
-hl.env("HYPRSHOT_DIR", "/home/linux-maniac/Pictures/screenshots")
+hl.env("HYPRSHOT_DIR", "/home/iolite/Pictures/screenshots")
 
 -----------------------
 ---- LOOK AND FEEL ----
