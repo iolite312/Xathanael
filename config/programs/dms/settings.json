@@ -5,11 +5,13 @@
   "hyprlandLayoutGapsOverride": 5,
   "hyprlandLayoutGapsOutOverride": 10,
   "firstDayOfWeek": 1,
+  "clockFormat": "24h",
   "controlCenterShowMicPercent": true,
   "showWorkspaceIndex": true,
   "showWorkspacePadding": true,
   "appIdSubstitutions": [],
   "clockDateFormat": "ddd d MMM yyyy",
+  "lockDateFormat": "ddd d MMM yyyy",
   "sortAppsAlphabetically": true,
   "launcherUseOverlayLayer": true,
   "launcherStyle": "spotlight",
@@ -58,6 +60,34 @@
   "launcherLogoColorOverride": "primary",
   "notificationOverlayEnabled": true,
   "osdPowerProfileEnabled": true,
+  "screenPreferences": {
+    "notifications": [
+      {
+        "name": "DP-1",
+        "model": "MAG 271QPX E2",
+        "modelIndex": 0
+      }
+    ],
+    "toast": [
+      {
+        "name": "DP-1",
+        "model": "MAG 271QPX E2",
+        "modelIndex": 0
+      }
+    ],
+    "osd": [
+      {
+        "name": "DP-1",
+        "model": "MAG 271QPX E2",
+        "modelIndex": 0
+      }
+    ]
+  },
+  "showOnLastDisplay": {
+    "notifications": false,
+    "toast": false,
+    "osd": false
+  },
   "displayShowDisconnected": true,
   "barConfigs": [
     {
@@ -66,9 +96,13 @@
       "enabled": true,
       "position": 0,
       "screenPreferences": [
-        "all"
+        {
+          "name": "DP-1",
+          "model": "MAG 271QPX E2",
+          "modelIndex": 0
+        }
       ],
-      "showOnLastDisplay": true,
+      "showOnLastDisplay": false,
       "leftWidgets": [
         "launcherButton",
         "workspaceSwitcher",
@@ -76,7 +110,11 @@
       ],
       "centerWidgets": [
         "music",
-        "clock",
+        {
+          "id": "clock",
+          "enabled": true,
+          "clockCompactMode": false
+        },
         "weather"
       ],
       "rightWidgets": [
@@ -84,7 +122,6 @@
         "clipboard",
         "cpuUsage",
         "memUsage",
-        "notificationButton",
         "battery",
         "controlCenterButton",
         {
@@ -141,6 +178,83 @@
       "hoverPopouts": false,
       "hoverPopoutDelay": 150,
       "island": false
+    },
+    {
+      "id": "bar1790623417399",
+      "name": "Bar 2",
+      "enabled": true,
+      "position": 0,
+      "screenPreferences": [
+        {
+          "name": "DP-3",
+          "model": "MAG 271QPX E2",
+          "modelIndex": 1
+        },
+        {
+          "name": "DP-2",
+          "model": "LG ULTRAGEAR"
+        }
+      ],
+      "showOnLastDisplay": false,
+      "leftWidgets": [
+        {
+          "id": "launcherButton",
+          "enabled": true
+        },
+        "workspaceSwitcher",
+        "focusedWindow"
+      ],
+      "centerWidgets": [
+        "clock"
+      ],
+      "rightWidgets": [],
+      "spacing": 4,
+      "innerPadding": 4,
+      "barLengthPadding": 0,
+      "bottomGap": 0,
+      "attachToScreenEdge": false,
+      "transparency": 1,
+      "widgetTransparency": 1,
+      "squareCorners": false,
+      "noBackground": false,
+      "gothCornersEnabled": false,
+      "gothCornerRadiusOverride": false,
+      "gothCornerRadiusValue": 12,
+      "borderEnabled": false,
+      "borderColor": "surfaceText",
+      "borderOpacity": 1,
+      "borderThickness": 1,
+      "widgetOutlineEnabled": false,
+      "widgetOutlineColor": "primary",
+      "widgetOutlineOpacity": 1,
+      "widgetOutlineThickness": 1,
+      "widgetPadding": 8,
+      "maximizeWidgetIcons": false,
+      "maximizeWidgetText": false,
+      "removeWidgetPadding": false,
+      "fontScale": 1,
+      "iconScale": 1,
+      "autoHide": false,
+      "autoHideStrict": false,
+      "autoHideDelay": 250,
+      "showOnWindowsOpen": false,
+      "openOnOverview": false,
+      "visible": true,
+      "popupGapsAuto": true,
+      "popupGapsManual": 4,
+      "maximizeDetection": true,
+      "useOverlayLayer": false,
+      "scrollEnabled": true,
+      "scrollXBehavior": "column",
+      "scrollYBehavior": "workspace",
+      "hoverPopouts": false,
+      "hoverPopoutDelay": 150,
+      "shadowIntensity": 0,
+      "shadowOpacity": 60,
+      "shadowDirectionMode": "inherit",
+      "shadowDirection": "top",
+      "shadowColorMode": "default",
+      "shadowCustomColor": "#000000"
     }
   ],
   "desktopClockCustomColor": {
@@ -203,6 +317,17 @@
     },
     "dms_colorpicker": {
       "enabled": false
+    }
+  },
+  "launcherPluginVisibility": {
+    "dms_power": {
+      "allowWithoutTrigger": true
+    },
+    "dms_qr_generator": {
+      "allowWithoutTrigger": true
+    },
+    "dms_clipboard_search": {
+      "allowWithoutTrigger": false
     }
   },
   "configVersion": 18
