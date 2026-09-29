@@ -177,6 +177,24 @@
       ];
   };
 
+  fileSystems."/mnt/Big_D" = {
+    device = "/dev/disk/by-uuid/be9ee9ea-b231-47f2-a4c6-a32662cd2f3f";
+    fsType = "ext4";
+    options = [
+      "defaults"
+      "x-gvfs-show"
+    ];
+  };
+
+  fileSystems."/mnt/Small_D" = {
+    device = "/dev/disk/by-uuid/ae837c36-87e3-4c6d-b410-abff9e005ed3";
+    fsType = "ext4";
+    options = [
+      "defaults"
+      "x-gvfs-show"
+    ];
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = [
