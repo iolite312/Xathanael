@@ -57,6 +57,7 @@ in
     vlc
     qbittorrent
     xviewer
+    hyprshot
   ];
 
   # Force the dark color scheme and explicitly set GTK3 theme in dconf
