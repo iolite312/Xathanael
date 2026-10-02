@@ -167,8 +167,8 @@
 
   services.printing.enable = true;
   services.printing.drivers = [
-    "canon-cups-ufr2"
-    "cnijfilter2"
+    pkgs.canon-cups-ufr2
+    pkgs.cnijfilter2
   ];
   services.avahi = {
     enable = true;
