@@ -93,6 +93,8 @@
     adwaita-icon-theme
     cifs-utils
     efibootmgr
+    google-fonts
+    cups-pk-helper
   ];
 
   xdg.portal = {
@@ -136,7 +138,6 @@
   };
 
   services.gnome.gnome-keyring.enable = true;
-  security.pam.services.greetd.enableGnomeKeyring = true;
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
@@ -158,6 +159,21 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     wireplumber.enable = true;
+  };
+
+  services.power-profiles-daemon.enable = true;
+
+  services.accounts-daemon.enable = true;
+
+  services.printing.enable = true;
+  services.printing.drivers = [
+    "canon-cups-ufr2"
+    "cnijfilter2"
+  ];
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
   };
 
   fileSystems."/mnt/nas" = {

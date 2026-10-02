@@ -37,6 +37,7 @@ in
     libsForQt5.qt5ct
     qt6Packages.qt6ct
     nemo-with-extensions
+    file-roller
     pwvucontrol
     fastfetch
     filezilla
@@ -109,6 +110,8 @@ in
     source = impurity.link ./config/programs/hyprland;
     recursive = true;
   };
+
+  xdg.configFile."mimeapps.list".force = true;
 
   xdg.mimeApps = {
     enable = true;

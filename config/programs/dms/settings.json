@@ -319,6 +319,8 @@
       "enabled": false
     }
   },
+  "clipboardClickToPaste": true,
+  "clipboardUseOverlayLayer": true,
   "launcherPluginVisibility": {
     "dms_power": {
       "allowWithoutTrigger": true
