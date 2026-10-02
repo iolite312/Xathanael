@@ -58,6 +58,7 @@
   },
   "launcherLogoMode": "os",
   "launcherLogoColorOverride": "primary",
+  "notepadDefaultMode": "popout",
   "notificationOverlayEnabled": true,
   "osdPowerProfileEnabled": true,
   "screenPreferences": {
