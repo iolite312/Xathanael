@@ -88,7 +88,8 @@
     wget
     inputs.waterfox.packages.${stdenv.hostPlatform.system}.waterfox-bin
     seahorse
-    btop
+    btop-rocm
+    amdgpu_top
     qt6.qtwayland
     adwaita-icon-theme
     cifs-utils
@@ -138,6 +139,7 @@
   };
 
   services.gnome.gnome-keyring.enable = true;
+  security.pam.services.greetd.enableGnomeKeyring = true;
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
