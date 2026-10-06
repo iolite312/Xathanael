@@ -59,6 +59,8 @@
   "launcherLogoMode": "os",
   "launcherLogoColorOverride": "primary",
   "notepadDefaultMode": "popout",
+  "acLockTimeout": 300,
+  "acPostLockMonitorTimeout": 300,
   "notificationOverlayEnabled": true,
   "osdPowerProfileEnabled": true,
   "screenPreferences": {
