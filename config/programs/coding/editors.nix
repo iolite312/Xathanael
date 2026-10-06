@@ -23,6 +23,7 @@
       oderwat.indent-rainbow
       mhutchie.git-graph
       eamodio.gitlens
+      dotjoshjohnson.xml
     ];
   };
 
