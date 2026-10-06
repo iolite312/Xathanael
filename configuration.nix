@@ -96,6 +96,9 @@
     efibootmgr
     google-fonts
     cups-pk-helper
+    rocmPackages.rocm-smi
+    rocmPackages.rocminfo
+    rocmPackages.amdsmi
   ];
 
   xdg.portal = {

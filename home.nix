@@ -14,6 +14,7 @@ in
     (programsDir + "/hyprland/default.nix")
     (programsDir + "/shell/default.nix")
     (programsDir + "/spicetify/default.nix")
+    (programsDir + "/ai/default.nix")
   ];
 
   home.username = "iolite";
@@ -30,6 +31,55 @@ in
     extraConfig = ''
       Host *
         IdentityFile ~/.ssh/id_ed25519
+      Host devProxmox
+        HostName 192.168.1.80
+        User dev
+        ForwardAgent yes
+
+      Host Calagopus
+        HostName 192.168.1.6
+        User calagopus
+        ForwardAgent yes
+
+      Host Portainer
+        HostName 192.168.1.178
+        User dockerhost
+
+      Host Proxmox
+        HostName 192.168.1.136
+        User root
+
+      Host k3s-c-1
+        HostName 192.168.1.200
+        User k3s
+
+      Host k3s-c-2
+        HostName 192.168.1.201
+        User k3s
+        
+      Host k3s-c-3
+        HostName 192.168.1.202
+        User k3s
+        
+      Host k3s-a-1
+        HostName 192.168.1.203
+        User k3s
+
+      Host k3s-a-2
+        HostName 192.168.1.204
+        User k3s
+
+      Host k3s-a-3
+        HostName 192.168.1.205
+        User k3s
+        
+      Host k3s-lb-1
+        HostName 192.168.1.206
+        User k3s
+
+      Host k3s-lb-2
+        HostName 192.168.1.207
+        User k3s
     '';
   };
 
