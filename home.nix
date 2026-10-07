@@ -110,6 +110,8 @@ in
     xviewer
     hyprshot
     satisfactorymodmanager
+    gnome-text-editor
+    gnome-calculator
   ];
 
   # Force the dark color scheme and explicitly set GTK3 theme in dconf
@@ -166,6 +168,10 @@ in
 
   xdg.mimeApps = {
     enable = true;
-    defaultApplications."application/pdf" = [ "waterfox.desktop" ];
+    defaultApplications = {
+      "application/pdf" = "waterfox.desktop";
+      "x-scheme-handler/http" = "waterfox.desktop";
+      "x-scheme-handler/https" = "waterfox.desktop";
+    };
   };
 }
