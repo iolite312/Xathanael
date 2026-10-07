@@ -76,10 +76,10 @@
       "wheel"
       "docker"
     ];
-    packages = with pkgs; [
-      #
-    ];
     shell = pkgs.zsh;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDlv/ROyCaJnOxW+tiQ9wntBN3PIXLEExeh/RJzxed3a"
+    ];
   };
   users.mutableUsers = true;
 
@@ -99,6 +99,7 @@
     rocmPackages.rocm-smi
     rocmPackages.rocminfo
     rocmPackages.amdsmi
+    traceroute
   ];
 
   xdg.portal = {
@@ -150,6 +151,20 @@
     SSH_AUTH_SOCK = "/run/user/1000/gcr/ssh";
     XCURSOR_THEME = "Adwaita";
     XCURSOR_SIZE = "24";
+    OLLAMA_HOST = "0.0.0.0";
+    OLLAMA_CONTEXT_LENGTH = "64000";
+  };
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
+      AllowUsers = [ "iolite" ];
+      MaxAuthTries = 3;
+      PerSourcePenalties = "crash:3600s authfail:3600s max:86400s";
+    };
   };
 
   fonts.packages = with pkgs; [
@@ -180,6 +195,11 @@
     nssmdns4 = true;
     openFirewall = true;
   };
+
+  networking.firewall.allowedTCPPorts = [
+    11434
+    3000
+  ];
 
   fileSystems."/mnt/nas" = {
     device = "//192.168.1.160/nas";
