@@ -96,7 +96,6 @@
     efibootmgr
     google-fonts
     cups-pk-helper
-    rocmPackages.rocm-smi
     rocmPackages.rocminfo
     rocmPackages.amdsmi
     traceroute
@@ -199,6 +198,7 @@
   networking.firewall.allowedTCPPorts = [
     11434
     3000
+    2020
   ];
 
   fileSystems."/mnt/nas" = {
