@@ -111,6 +111,7 @@ in
     satisfactorymodmanager
     gnome-text-editor
     gnome-calculator
+    ncdu
   ];
 
   # Force the dark color scheme and explicitly set GTK3 theme in dconf
