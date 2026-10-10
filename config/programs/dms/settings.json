@@ -62,6 +62,8 @@
   "acLockTimeout": 300,
   "acPostLockMonitorTimeout": 300,
   "notificationOverlayEnabled": true,
+  "lockPamPath": "/etc/pam.d/login",
+  "lockPamExternallyManaged": true,
   "osdPowerProfileEnabled": true,
   "screenPreferences": {
     "notifications": [
