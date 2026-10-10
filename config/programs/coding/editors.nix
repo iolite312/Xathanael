@@ -38,5 +38,6 @@
     jetbrains.webstorm
     nil
     nixfmt
+    insomnia
   ];
 }

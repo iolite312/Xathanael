@@ -15,6 +15,7 @@
     pipx
     python3
     rustup
+    gcc
   ];
 
   programs.pnpm = {
