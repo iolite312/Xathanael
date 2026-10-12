@@ -28,4 +28,9 @@
       else
         "${config.home.homeDirectory}/.local/share/pnpm";
   };
+
+  programs.direnv = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 }

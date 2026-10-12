@@ -9,7 +9,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    waterfox.url = "github:iolite312/nix-waterfox";
+    waterfox = {
+      url = "github:iolite312/nix-waterfox";
+    };
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
