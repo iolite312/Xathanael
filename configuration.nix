@@ -99,6 +99,7 @@
     rocmPackages.rocminfo
     rocmPackages.amdsmi
     traceroute
+    ffmpeg_8-full
   ];
 
   xdg.portal = {
