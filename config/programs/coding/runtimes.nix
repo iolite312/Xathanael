@@ -16,6 +16,7 @@
     python3
     rustup
     gcc
+    yaml-language-server
   ];
 
   programs.pnpm = {

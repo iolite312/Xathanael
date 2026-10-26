@@ -24,6 +24,7 @@
       mhutchie.git-graph
       eamodio.gitlens
       dotjoshjohnson.xml
+      redhat.vscode-yaml
     ];
   };
 
@@ -39,5 +40,8 @@
     nil
     nixfmt
     insomnia
+    ansible
+    ansible-lint
+    ngrok
   ];
 }
