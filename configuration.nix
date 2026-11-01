@@ -7,7 +7,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    inputs.dank-greeter.nixosModules.default
+    inputs.dux-greeter.nixosModules.default
   ];
 
   boot.loader.systemd-boot.enable = false;
