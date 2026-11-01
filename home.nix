@@ -112,6 +112,7 @@ in
     gnome-text-editor
     gnome-calculator
     ncdu
+    tenacity
   ];
 
   # Force the dark color scheme and explicitly set GTK3 theme in dconf
