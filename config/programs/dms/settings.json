@@ -141,6 +141,15 @@
       "rightWidgets": [
         "systemTray",
         "clipboard",
+        {
+          "id": "idleInhibitor",
+          "enabled": true
+        },
+        {
+          "id": "privacyIndicator",
+          "enabled": true,
+          "privacyShowMicIcon": false
+        },
         "cpuUsage",
         "memUsage",
         "battery",
@@ -631,14 +640,13 @@
   ],
   "launcherEnterAction": "launch",
   "wellbeingEnabled": false,
-  "dashOptions": {},
-  "osdMediaPlaybackEnabled": false,
-  "powerMenuBootEntries": [
-    {
-      "id": "0007",
-      "label": "Windows Boot Manager"
+  "dashOptions": {
+    "media": {
+      "titleFont": "ui"
     }
-  ],
+  },
+  "osdMediaPlaybackEnabled": false,
+  "powerMenuBootEntries": [],
   "avatarRing": "none",
   "lockScreenWidgetInstances": [
     {
@@ -878,5 +886,6 @@
     }
   ],
   "lockScreenShowPowerActions": true,
-  "lockScreenFontFamily": "DejaVu Sans"
+  "lockScreenFontFamily": "DejaVu Sans",
+  "osdAlwaysShowValue": true
 }
