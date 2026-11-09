@@ -25,6 +25,7 @@
       eamodio.gitlens
       dotjoshjohnson.xml
       redhat.vscode-yaml
+      ms-vsliveshare.vsliveshare
     ];
   };
 
