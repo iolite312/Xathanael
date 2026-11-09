@@ -90,7 +90,6 @@ in
     pwvucontrol
     fastfetch
     filezilla
-    obs-studio
     proton-vpn
     protonplus
     heroic
