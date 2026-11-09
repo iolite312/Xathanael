@@ -135,6 +135,44 @@
     enable = true;
   };
 
+  # Lets unpatched, dynamically linked binaries (LSPs, editor extensions, downloaded tools) run
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      stdenv.cc.cc.lib
+      zlib
+      zstd
+      openssl
+      curl
+      icu
+      libxml2
+      libuuid
+      libsecret
+      krb5
+      expat
+      glib
+      dbus
+      nss
+      nspr
+      alsa-lib
+      cups
+      at-spi2-atk
+      gtk3
+      pango
+      cairo
+      libdrm
+      libgbm
+      libxkbcommon
+      libx11
+      libxcb
+      libxcomposite
+      libxdamage
+      libxext
+      libxfixes
+      libxrandr
+    ];
+  };
+
   environment.etc = {
     "1password/custom_allowed_browsers" = {
       text = ''
