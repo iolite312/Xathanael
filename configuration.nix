@@ -94,7 +94,6 @@
     adwaita-icon-theme
     cifs-utils
     efibootmgr
-    google-fonts
     cups-pk-helper
     rocmPackages.rocminfo
     rocmPackages.amdsmi
@@ -118,6 +117,10 @@
   programs.zsh.enable = true;
   programs.steam = {
     enable = true;
+  };
+  programs.obs-studio = {
+    enable = true;
+    enableVirtualCamera = true;
   };
 
   virtualisation.docker = {
@@ -170,6 +173,7 @@
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
+    google-fonts
   ];
 
   services.pulseaudio.enable = false;
@@ -249,6 +253,12 @@
     dates = "daily";
     options = "--delete-older-than 7d";
   };
+
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n.extraLocales = [
+    "nl_NL.UTF-8/UTF-8"
+  ];
 
   system.stateVersion = "26.05";
 
