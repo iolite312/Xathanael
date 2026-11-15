@@ -92,7 +92,7 @@ hl.animation({ leaf = "border", enabled = true, speed = 3, bezier = "default" })
 
 hl.window_rule({
     name      = "vesktop-workspace",
-    match     = { initial_class = "vesktop" },
+    match     = { initial_class = "discord" },
     workspace = "2 silent",
 })
 
