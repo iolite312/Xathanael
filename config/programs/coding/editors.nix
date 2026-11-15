@@ -44,5 +44,10 @@
     ansible
     ansible-lint
     ngrok
+    air
+    bruno
+    openssl
+    mkcert
+    nssTools
   ];
 }
