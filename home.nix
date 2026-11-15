@@ -93,7 +93,7 @@ in
     proton-vpn
     protonplus
     heroic
-    vesktop
+    discord
     prismlauncher
     obsidian
     remmina
