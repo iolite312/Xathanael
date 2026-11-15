@@ -887,5 +887,8 @@
   ],
   "lockScreenShowPowerActions": true,
   "lockScreenFontFamily": "DejaVu Sans",
-  "osdAlwaysShowValue": true
+  "osdAlwaysShowValue": true,
+  "wallpaperFillMode": "Fill",
+  "matugenSpec": "2021",
+  "matugenSourceMode": "dominant"
 }
