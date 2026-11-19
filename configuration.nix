@@ -171,7 +171,14 @@
       libxdamage
       libxext
       libxfixes
+      libGL
       libxrandr
+      libpulseaudio
+      libxcursor
+      libxinerama
+      libxi
+      libxscrnsaver
+      libxxf86vm
     ];
   };
 
