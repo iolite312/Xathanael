@@ -47,16 +47,8 @@ in
       Host Proxmox
         HostName 192.168.1.136
         User root
-
-      Host k3s-c-1
-        HostName 192.168.1.200
-        User k3s
-
-      Host k3s-c-2
-        HostName 192.168.1.201
-        User k3s
         
-      Host k3s-c-3
+      Host k3s-c
         HostName 192.168.1.202
         User k3s
         
@@ -70,14 +62,6 @@ in
 
       Host k3s-a-3
         HostName 192.168.1.205
-        User k3s
-        
-      Host k3s-lb-1
-        HostName 192.168.1.206
-        User k3s
-
-      Host k3s-lb-2
-        HostName 192.168.1.207
         User k3s
     '';
   };
