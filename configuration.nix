@@ -114,7 +114,10 @@
     ];
   };
 
-  programs._1password-gui.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "iolite" ];
+  };
   programs._1password.enable = true;
   programs.zsh.enable = true;
   programs.steam = {
