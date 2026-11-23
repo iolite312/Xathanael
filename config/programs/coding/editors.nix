@@ -49,5 +49,7 @@
     openssl
     mkcert
     nssTools
+    kubernetes-helm
+    krew
   ];
 }

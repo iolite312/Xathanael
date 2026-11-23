@@ -263,11 +263,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1791820166,
-        "narHash": "sha256-6NEFcJVbeDTtnq7iOpmaC3EHVbPvnbFNmv/oPV1B3g8=",
+        "lastModified": 1795448168,
+        "narHash": "sha256-iDE0v2vJdjrCCDz9xrLLjmnL/u4/alfMiKt12Z8CZC8=",
         "owner": "iolite312",
         "repo": "nix-waterfox",
-        "rev": "1da2fa26360deca47cadc9c7362ab0654956c801",
+        "rev": "03775c2140acdadf6e9e36ca5ebba3cdcb68c0d0",
         "type": "github"
       },
       "original": {
